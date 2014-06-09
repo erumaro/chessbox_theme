@@ -1,0 +1,723 @@
+/*
+Theme Name: Chessbox
+Theme URI: http://www.eruma.se/
+Author: Tobias Årud
+Author URI: http://eruma.se/about-me/
+Description: A responsive single column theme built with content/mobile first as a main point.
+Version: 1.0
+Tags: one-column, responsive-layout, custom-header, custom-menu, featured-images
+*/
+
+/* REMEMBER THIS
+-----------------------------------------------
+* Order margin/padding: TOP RIGHT BOTTOM LEFT
+*/
+
+/* CSS CHAPTER LIST
+-----------------------------------------------
+* 1.0 - HTML5 RESET MINIFIED
+* 2.0 - GENERAL
+*   2.1 - CLEARFIX & COLLAPSEFIX
+*   2.2 - ASSISTIVE TEXT
+*   2.3 - MEDIA
+* 3.0 - HEADER.PHP
+*   3.1 - SITE-HEADER
+*   3.2 - SITE-NAVIGATION
+* 4.0 - MAIN
+*   4.1 - INDEX.PHP
+*   4.1.1 - CONTENT.PHP
+*   4.2 - SINGLE.PHP
+*   4.2.1 - CONTENT-SINGLE.PHP
+*   4.3 - PAGE.PHP
+*   4.3.1 - CONTENT-PAGE.PHP
+* 5.0 - FOOTER.PHP
+*   5.1 - SIDEBAR
+* 6.0 - MEDIA QUERIES
+*   6.1 - TABLET
+*   6.2 - MOBILE
+*/
+
+/* 1.0 - HTML5 RESET MINIFIED
+----------------------------------------------- */
+html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,address,cite,code,del,dfn,em,img,ins,kbd,q,samp,small,strong,sub,sup,var,b,i,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}
+body{line-height:1}
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}
+nav ul{list-style:none}
+blockquote,q{quotes:none}
+blockquote:before,blockquote:after,q:before,q:after{content:none}
+a{margin:0;padding:0;font-size:100%;vertical-align:baseline;background:transparent}
+ins{background-color:#ff9;color:#000;text-decoration:none}
+mark{background-color:#ff9;color:#000;font-style:italic;font-weight:bold}
+del{text-decoration:line-through}
+abbr[title],dfn[title]{border-bottom:1px dotted;cursor:help}
+table{border-collapse:collapse;border-spacing:0}
+hr{display:block;height:1px;border:0;border-top:1px solid #ccc;margin:1em 0;padding:0}
+input,select{vertical-align:middle}
+
+/* 2.0 - GENERAL
+----------------------------------------------- */
+html {
+    font-size: 62.5%;
+}
+
+body {
+    background: #e7e7e7;
+    color: #444;
+    font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+    font-size:1.4rem;
+    margin: 1% auto;
+    max-width: 800px;
+    width: 98%;
+}
+
+h1, h2, h3, h4, h5 {
+    font-family:'Vollkorn', Baskerville, Georgia, serif;
+}
+
+a {
+    outline: none;
+    color: #21759b;
+}
+a:hover {
+    color: #0f3647;
+}
+
+p {
+    font-weight: 400;
+    font-size: 15px;
+    font-size: 1.5rem;
+    line-height: 1.6;
+    margin-bottom: 1%;
+}
+
+strong {
+    font-weight: 700;
+}
+
+.wp-smiley{
+    margin:0 !important;
+}
+
+/* 2.1 CLEARFIX & COLLAPSEFIX *******************/
+.clearfix:after { content: "."; display: block; height: 0; clear: both; visibility: hidden; } .clearfix { display: inline-block; } /* Hide from IE Mac \*/ .clearfix { display: block; } /* End hide from IE Mac */ .none { display: none; } /* End Clearfix */
+.collapsefix{overflow:hidden;}
+
+/* 2.2 ASSISTIVE TEXT ***************************/
+.screen-reader-text{clip:rect(1px,1px,1px,1px);position:absolute}
+.screen-reader-text:focus{background-color:#f1f1f1;border-radius:3px;box-shadow:0 0 2px 2px rgba(0,0,0,.6);clip:auto;color:#21759b;display:block;font-size:14px;font-weight:700;height:auto;line-height:normal;padding:15px 23px 14px;position:absolute;left:5px;top:5px;text-decoration:none;text-transform:none;width:auto;z-index:100000}
+.hide{display:none}
+
+/* 2.3 MEDIA ************************************/
+.entry-content img,
+.comment-content img,
+.widget img {
+    margin: 1%;
+    max-width: 100%; /* Fluid images for posts, comments, and widgets */
+}
+img[class*="align"],
+img[class*="wp-image-"],
+img[class*="attachment-"] {
+    height: auto; /* Make sure images with WordPress-added height and width attributes are scaled correctly */
+}
+img.size-full,
+img.size-large,
+img.header-image,
+img.wp-post-image {
+    max-width: 100%;
+    height: auto; /* Make sure images with WordPress-added height and width attributes are scaled correctly */
+}
+
+/* Make sure videos and embeds fit their containers */
+embed,
+iframe,
+object,
+video {
+    max-width: 100%;
+}
+.entry-content .twitter-tweet-rendered {
+    max-width: 100% !important; /* Override the Twitter embed fixed width */
+}
+
+/* Images */
+.alignleft {
+    float: left;
+}
+.alignright {
+    float: right;
+}
+.aligncenter {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* 3.0 - HEADER.PHP
+----------------------------------------------- */
+
+/* 3.1 SITE-HEADER ******************************/
+.site-header{
+    text-align: center;
+}
+.site-title{
+    font-size: 34px;
+    font-size: 3.4rem;
+    font-weight: 700;
+}
+.site-title a{
+    color:black;
+    text-decoration: none;
+}
+.site-description{
+    font-size: 20px;
+    font-size: 2.0rem;
+    font-weight: 400;
+}
+
+/* 3.2 SITE-NAVIGATION **************************/
+.site-navigation {
+    font-family:'Vollkorn', Baskerville, Georgia, serif;
+    margin: 15px 0 15px 0;
+}
+.site-navigation ul{
+    text-align: center;
+}
+.site-navigation li {
+    display: inline-block;
+    font-size: 18px;
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin: 6px;
+    text-transform: lowercase;
+}
+.site-navigation a {
+    color: #5e5e5e;
+    text-decoration: none;
+}
+.site-navigation a:hover {
+    color:#00A2FF;
+}
+
+/* 4.0 - MAIN
+----------------------------------------------- */
+.post{
+    background: white;
+    margin-bottom: 2%;
+}
+
+.entry-container{
+    padding: 4%;
+}
+
+/* 4.1 INDEX.PHP ********************************/
+
+.home .post{
+}
+
+.paging-navigation{
+    padding: 4%;
+    background: #333;
+    margin-bottom: 2%;
+}
+
+/* 4.1.1 - CONTENT.PHP */
+
+/* 4.2 SINGLE.PHP *******************************/
+
+/* 4.2.1 - CONTENT-SINGLE.PHP */
+
+.single-post .entry-header{
+    border-bottom: 1px solid #EEEEEE;
+    margin-bottom: 4%;
+    padding-bottom: 4%;
+}
+
+.single-post .entry-title{
+    font-size: 34px;
+    font-size: 3.4rem;
+    font-weight: 700;
+    line-height: 2;
+}
+
+.single-post .entry-content h2{
+    font-size: 20px;
+    font-size: 2.0rem;
+    font-weight: 700;
+    line-height: 2;
+}
+
+.single-post .entry-content ul{
+    margin-left: 1%;
+    padding: 1%;
+}
+
+/* PREV & NEXT POST NAV */
+.nav-links {
+    background: #333;
+    padding: 4%;
+}
+
+.post-navigation,
+.image-navigation {
+    margin: 24px auto 24px;
+}
+
+.post-navigation a,
+.image-navigation .previous-image,
+.image-navigation .next-image {
+    border-bottom: 1px solid #EEEEEE;
+    padding-bottom: 12px;
+    width: 100%;
+}
+
+.post-navigation .meta-nav {
+    color: #767676;
+    display: block;
+    font-size: 12px;
+    font-weight: 900;
+    line-height: 2;
+    text-transform: uppercase;
+}
+
+.post-navigation a,
+.image-navigation a {
+    color: white;
+    display: block;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.7142857142;
+    text-transform: none;
+}
+
+.post-navigation a:hover,
+.image-navigation a:hover {
+    color: #41a62a;
+}
+
+/* COMMENT FIELD */
+#respond{
+    margin-bottom: 3%;
+    background: white;
+    padding: 4%;
+}/* WP standard comment field */
+
+.commentlist{
+    background: white;
+    border-bottom: 1px solid #EEEEEE;
+    padding: 4%;
+}
+
+.comment-body{
+    margin-bottom: 3%;
+}
+
+#disqus_thread{
+    margin-bottom: 3%;
+    background: white;
+    padding: 4%;    
+}/* Disqus comment field */
+
+/* 4.3 PAGE.PHP *********************************/
+
+/* 4.3.1 - CONTENT-PAGE.PHP */
+.type-page{
+    background: white;
+    padding: 4%;
+    margin-bottom: 2%;
+}
+
+.type-page .entry-header{
+    border-bottom: 1px solid #EEEEEE;
+    margin-bottom: 4%;
+    padding-bottom: 4%;
+}
+
+.type-page .entry-title{
+    font-size: 34px;
+    font-size: 3.4rem;
+    font-weight: 700;
+    line-height: 2;
+}
+
+/* 4.3.1.1 - CONTACT FORM ***********************/
+
+/* Contact Form 7 Contact Page */
+#pagecontact{
+    width: 95%;
+}
+
+#pagecontact label{
+    font-size:14px;
+    font-size:1.4rem;
+    text-transform:uppercase;
+    font-weight:700;
+    color:#636363;
+}
+
+.formrow{
+}
+
+.formleft{
+    width: 48%;
+    margin-right: 4%;
+    margin-bottom: 25px;
+    float: left;
+}
+
+.formright{
+    width: 48%;
+    margin-bottom: 25px;
+    float:left;
+}
+
+#pagecontact input.wpcf7-text{
+    font-size :14px;
+    font-size:1.4rem;
+    width: 100%;
+    padding: 5px;
+}
+
+.messagerow{
+    margin-bottom: 25px;
+}
+
+#pagecontact textarea {
+    position: relative;
+    padding: 5px;
+    width: 100%;
+}
+
+#pagecontact input.wpcf7-text:focus, #pagecontact textarea:focus{
+    background: #eee;
+}
+
+#pagecontact input[type="submit"]{
+    padding:8px 18px;
+    background:#222;
+    color:#fff;
+    border: 1px solid #fff;
+    float:left;
+    font-size: 14px;
+    font-size: 1.4rem;
+}
+
+#pagecontact input[type="submit"]:hover{
+    background:red;
+    color:#fff;
+    border: 1px solid #222;
+}
+
+/* 5.0 - FOOTER.PHP
+----------------------------------------------- */
+.site-footer {
+    background-color: #333;
+    font-size: 12px;
+    position: relative;
+    z-index: 3;
+}
+
+.site-info{
+    padding: 2%;
+    background: #262626;
+}
+
+.site-footer,
+.site-info,
+.site-info a {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* 5.1 SIDEBAR **********************************/
+#supplementary {
+    padding: 0 10px;
+}
+
+.footer-sidebar .widget {
+    float:left;
+    width:22%;
+    padding: 1%;
+}
+
+.widget {
+    font-size: 14px;
+    line-height: 1.2857142857;
+    margin-bottom: 48px;
+    width: 100%;
+}
+
+.widget .widget-title {
+    font-size: 14px;
+    font-size: 1.4rem;
+    font-weight: 700;
+    line-height: 1.7142857142;
+    margin: 0 0 24px 0;
+    text-transform: uppercase;
+}
+
+.widget-title,
+.widget-title a {
+    color: #fff;
+}
+
+.widget-title a:hover {
+    color: #41a62a;
+}
+
+.widget a {
+    color: #fff;
+}
+
+.widget a:hover {
+    color: #41a62a;
+}
+
+.widget address {
+    margin-bottom: 18px;
+}
+
+.widget abbr[title] {
+    border-color: rgba(255, 255, 255, 0.7);
+}
+
+.widget mark,
+.widget ins {
+    color: #000;
+}
+
+.widget pre,
+.widget fieldset {
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.widget code,
+.widget kbd,
+.widget tt,
+.widget var,
+.widget samp,
+.widget pre {
+    font-size: 12px;
+    font-size: 1.2rem;
+    line-height: 1.5;
+}
+
+.widget blockquote {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 18px;
+    font-size: 1.8rem;
+    line-height: 1.5;
+    margin-bottom: 18px;
+}
+
+.widget blockquote cite {
+    color: #fff;
+    font-size: 14px;
+    font-size: 1.4rem;
+    line-height: 1.2857142857;
+}
+
+.widget dl,
+.widget dd {
+    margin-bottom: 18px;
+}
+
+.widget ul,
+.widget ol {
+    list-style: none;
+    margin: 0;
+}
+
+.widget li > ol,
+.widget li > ul {
+    margin-left: 10px;
+}
+
+.widget table,
+.widget th,
+.widget td {
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.widget table {
+    margin-bottom: 18px;
+}
+
+.widget del {
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.widget hr {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.widget p {
+    margin-bottom: 18px;
+}
+
+.widget input,
+.widget textarea {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    font-size: 16px;
+    font-size: 1.6rem;
+    padding: 1px 2px 2px 4px;
+}
+
+.widget input:focus,
+.widget textarea:focus {
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.widget button,
+.widget .button,
+.widget input[type="button"],
+.widget input[type="reset"],
+.widget input[type="submit"] {
+    background-color: red;
+    border: 0;
+    font-size: 12px;
+    font-size: 1.2rem;
+    padding: 5px 15px 4px;
+}
+
+.widget input[type="button"]:hover,
+.widget input[type="button"]:focus,
+.widget input[type="reset"]:hover,
+.widget input[type="reset"]:focus,
+.widget input[type="submit"]:hover,
+.widget input[type="submit"]:focus {
+    background-color: #41a62a;
+}
+
+.widget input[type="button"]:active,
+.widget input[type="reset"]:active,
+.widget input[type="submit"]:active {
+    background-color: #55d737;
+}
+
+.widget .wp-caption {
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 18px;
+}
+
+.widget_calendar table {
+    line-height: 2;
+    margin: 0;
+}
+
+.widget_calendar caption {
+    color: #fff;
+    font-weight: 700;
+    line-height: 1.7142857142;
+    margin-bottom: 18px;
+    text-align: left;
+    text-transform: uppercase;
+}
+
+.widget_calendar thead th {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.widget_calendar tbody td,
+.widget_calendar thead th {
+    text-align: center;
+}
+
+.widget_calendar tbody a {
+    background-color: #24890d;
+    color: #fff;
+    display: block;
+}
+
+.widget_calendar tbody a:hover {
+    background-color: #41a62a;
+}
+
+.widget_calendar tbody a:hover {
+    color: #fff;
+}
+
+.widget_calendar #prev {
+    padding-left: 5px;
+}
+
+.widget_calendar #next {
+    padding-right: 5px;
+    text-align: right;
+}
+
+/* List Style Widgets*/
+
+.widget_archive li,
+.widget_categories li,
+.widget_links li,
+.widget_meta li,
+.widget_nav_menu li,
+.widget_pages li,
+.widget_recent_comments li,
+.widget_recent_entries li {
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 8px 0 9px;
+}
+
+.widget_archive li:first-child,
+.widget_categories li:first-child,
+.widget_links li:first-child,
+.widget_meta li:first-child,
+.widget_nav_menu li:first-child,
+.widget_pages li:first-child,
+.widget_recent_comments li:first-child,
+.widget_recent_entries li:first-child {
+    border-top: 0;
+}
+
+.widget_categories li ul,
+.widget_nav_menu li ul,
+.widget_pages li ul {
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    margin-top: 9px;
+}
+
+.widget_categories li li:last-child,
+.widget_nav_menu li li:last-child,
+.widget_pages li li:last-child {
+    padding-bottom: 0;
+}
+
+/* Recent Posts Widget */
+
+.widget_recent_entries .post-date {
+    display: block;
+}
+
+/* RSS Widget */
+
+.rsswidget img {
+    margin-top: -4px;
+}
+
+.rssSummary {
+    margin: 9px 0;
+}
+
+.rss-date {
+    display: block;
+}
+
+.widget_rss li {
+    margin-bottom: 18px;
+}
+
+.widget_rss li:last-child {
+    margin-bottom: 0;
+}
+
+/* Text Widget */
+
+.widget_text > div > :last-child {
+    margin-bottom: 0;
+}
+
+/* 6.0 - MEDIA QUERIES
+----------------------------------------------- */
+/* 6.1 TABLET ***********************************/
+/* 6.2 MOBILE ***********************************/
