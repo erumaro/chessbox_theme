@@ -10,13 +10,13 @@
                              */
                             get_template_part( 'content', 'single' );
 
-                            // Previous/next post navigation.
-                            chessbox_post_nav();
-
                             // If comments are open or we have at least one comment, load up the comment template.
                             if ( comments_open() || get_comments_number() ) {
                                     comments_template();
                             }
+                            
+                            // Previous/next post navigation.
+                            chessbox_post_nav();
                     endwhile;
             ?>
             </div>
