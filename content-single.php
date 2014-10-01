@@ -1,8 +1,16 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class('single-post'); ?>>
     <?php
-    if ( has_post_thumbnail()) : the_post_thumbnail('full');
-    endif;
+    if ( '' != get_the_post_thumbnail() ) {
+        ?><figure class="post-img">
+        <?php the_post_thumbnail('full');
+        ?></figure><?php
+    } else {
+        // some code
+    }
     ?>
+    <div class="post-format">
+        <a href="#"></a>
+    </div>
     <div class="entry-container">
         <header class="entry-header">
             <h2 class="entry-title"><?php the_title(); ?></h2>

@@ -1,4 +1,16 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(clearfix); ?>>
+    <?php
+    if ( '' != get_the_post_thumbnail() ) {
+        ?><figure class="post-img">
+        <?php the_post_thumbnail('large');
+        ?></figure><?php
+    } else {
+        // some code
+    }
+    ?>
+    <div class="post-format">
+        <a href="#"></a>
+    </div>
     <div class="entry-container">
     <header class="entry-header">
         <?php

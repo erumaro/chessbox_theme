@@ -44,6 +44,9 @@ function chessbox_setup() {
 		'featured_content_filter' => 'chessbox_get_featured_posts',
 		'max_posts' => 6,
 	) );
+        
+        // Add suport for HTML5 Search form
+        add_theme_support( 'html5', array( 'search-form' ) );
 }
 endif; // chessbox_setup
 add_action( 'after_setup_theme', 'chessbox_setup' );
