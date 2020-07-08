@@ -21,6 +21,7 @@ Tags: one-column, responsive-layout, custom-header, custom-menu, featured-images
 *   2.1 - CLEARFIX & COLLAPSEFIX
 *   2.2 - ASSISTIVE TEXT
 *   2.3 - MEDIA
+*   2.4 - FORMS
 * 3.0 - HEADER.PHP
 *   3.1 - SITE-HEADER
 *   3.2 - SITE-NAVIGATION
@@ -157,6 +158,68 @@ video {
     margin-right: auto;
 }
 
+/* 2.4 FORMS ************************************/
+.search-field {
+    display: inline-flex;
+    margin: 0;
+    max-width: 100%;
+    flex: 1 0 auto;
+    outline: 0;
+    text-align: left;
+    line-height: 1.2;
+    padding: .678em 1em;
+    border: 1px solid rgba(34,36,38,.15);
+    border-radius: .2857rem;
+    transition: box-shadow .1s ease,border-color .1s ease,-webkit-box-shadow .1s ease;
+    box-shadow: none;
+
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+.search-field:focus {
+    border-color: #85b7d9;
+    background: #fff;
+    color: rgba(0,0,0,.8);
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+.search-submit {
+    cursor: pointer;
+    display: inline-block;
+    min-height: 1em;
+    outline: 0;
+    border: none;
+    vertical-align: baseline;
+    background: #cc181e none;
+    color: rgba(255, 255, 255, 1);
+    margin: 0 .25em 0 0;
+    padding: .7857em 1.5em .7857em;
+    text-transform: none;
+    text-shadow: none;
+    font-size: 1.2857rem;
+    font-weight: 700;
+    line-height: 1em;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 0;
+    box-shadow: 0 0 0 1px transparent inset, 
+                0 0 0 0 rgba(34, 36, 38, .15) inset;
+    transition: opacity .1s ease,
+                backgound-color .1s ease,
+                color 1s ease,
+                box-shadow 1s ease,
+                background .1s ease;
+}
+
+.search-submit:hover {
+    background: #9c1217 none;
+}
+
+.search-submit:focus {
+    background: #850f13 none;
+}
 
 /* 3.0 - HEADER.PHP
 ----------------------------------------------- */
@@ -207,7 +270,7 @@ video {
 }
 
 .site-navigation a:hover {
-    background: #333;
+    background: #cc181e;
     color:white;
     transition: background 0.5s ease 0s;
 }
@@ -291,7 +354,7 @@ video {
     margin-top: -35px;
 }
 
-.post-format a{
+.post-format span{
     background-color: #cc181e;
     background-image:url('images/standard.png');
     background-position: center; 

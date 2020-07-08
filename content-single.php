@@ -9,7 +9,7 @@
     }
     ?>
     <div class="post-format">
-        <a href="#"></a>
+        <span></span>
     </div>
     <div class="entry-container">
         <header class="entry-header">

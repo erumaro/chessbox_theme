@@ -1,4 +1,4 @@
-<article id="post-<?php the_ID(); ?>" <?php post_class(clearfix); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?>>
     <?php
     if ( '' != get_the_post_thumbnail() ) {
         ?><figure class="post-img">
@@ -9,7 +9,7 @@
     }
     ?>
     <div class="post-format">
-        <a href="#"></a>
+        <span></span>
     </div>
     <div class="entry-container">
     <header class="entry-header">
@@ -33,7 +33,7 @@
         <?php
             endif;
 
-            edit_post_link( __( 'Edit', 'chessbox' ), '<span class="edit-link">', '</span>' );
+            edit_post_link( __( 'Edit', 'chessbox' ), '| <span class="edit-link">', '</span>' );
         ?>
     </footer><!-- .entry-meta -->
     </div>
