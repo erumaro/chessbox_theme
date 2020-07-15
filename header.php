@@ -14,9 +14,9 @@
         <?php wp_head(); ?>
     </head>
     <body <?php body_class(); ?>>
+        <a class="screen-reader-text skip-link" href="#content"><?php _e( 'Skip to content', 'chessbox' ); ?></a>
         <nav id="primary-navigation" class="site-navigation primary-navigation" role="navigation">
             <div class="wrapper">
-                <a class="screen-reader-text skip-link" href="#content"><?php _e( 'Skip to content', 'chessbox' ); ?></a>
                 <?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'nav-menu' ) ); ?>
             </div>
         </nav>
@@ -24,7 +24,7 @@
             <div class="wrapper">
                 <h1 class="site-title">
                     <a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
-                        <img src="<?php bloginfo('template_directory'); ?>/images/logo.png"  alt="<?php bloginfo( 'name' ); ?>" />
+                        <?php bloginfo( 'name' ); ?>
                     </a>
                 </h1>
                 <h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
