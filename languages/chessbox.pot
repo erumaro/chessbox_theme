@@ -1,0 +1,202 @@
+# Copyright (C) 2022 Tobias Årud
+# This file is distributed under the .
+msgid ""
+msgstr ""
+"Project-Id-Version: Chessbox 1.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/theme/chessbox\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2022-10-12T14:57:41+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.7.0\n"
+"X-Domain: chessbox\n"
+
+#. Theme Name of the theme
+msgid "Chessbox"
+msgstr ""
+
+#. Theme URI of the theme
+msgid "http://www.eruma.se/"
+msgstr ""
+
+#. Description of the theme
+msgid "A responsive single column theme built with content/mobile first as a main point."
+msgstr ""
+
+#. Author of the theme
+msgid "Tobias Årud"
+msgstr ""
+
+#. Author URI of the theme
+msgid "http://eruma.se/about-me/"
+msgstr ""
+
+#: archive.php:8
+msgid "Daily Archives: %s"
+msgstr ""
+
+#: archive.php:11
+msgid "Monthly Archives: %s"
+msgstr ""
+
+#: archive.php:11
+msgctxt "monthly archives date format"
+msgid "F Y"
+msgstr ""
+
+#: archive.php:14
+msgid "Yearly Archives: %s"
+msgstr ""
+
+#: archive.php:14
+msgctxt "yearly archives date format"
+msgid "Y"
+msgstr ""
+
+#: archive.php:17
+msgid "Archives"
+msgstr ""
+
+#: category-anime-manga.php:6
+#: category-film-tv.php:6
+#: category-musik.php:6
+#: category-spel.php:6
+#: category.php:6
+msgid "Kategori: %s"
+msgstr ""
+
+#: content-none.php:2
+msgid "Nothing Found"
+msgstr ""
+
+#: content-none.php:8
+msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+
+#: content-none.php:12
+msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
+msgstr ""
+
+#: content-none.php:17
+msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
+msgstr ""
+
+#: content-page.php:9
+msgid "Pages:"
+msgstr ""
+
+#: content-page.php:15
+#: content.php:36
+msgid "Edit"
+msgstr ""
+
+#: content-single.php:18
+msgctxt "Used between list items, there is a space after the comma."
+msgid ", "
+msgstr ""
+
+#: content.php:32
+msgid "Leave a comment"
+msgstr ""
+
+#: content.php:32
+msgid "1 Comment"
+msgstr ""
+
+#: content.php:32
+msgid "% Comments"
+msgstr ""
+
+#: footer.php:7
+msgid "http://wordpress.org/"
+msgstr ""
+
+#: footer.php:7
+msgid "Proudly powered by %s"
+msgstr ""
+
+#: functions.php:17
+msgid "Top primary menu"
+msgstr ""
+
+#: functions.php:18
+msgid "Secondary menu in left sidebar"
+msgstr ""
+
+#: functions.php:59
+msgid "Footer Widget Area"
+msgstr ""
+
+#: functions.php:61
+msgid "Appears in the footer section of the site."
+msgstr ""
+
+#: functions.php:69
+#: functions.php:79
+#: functions.php:89
+#: functions.php:99
+msgid "Content Sidebar"
+msgstr ""
+
+#: functions.php:71
+msgid "Additional sidebar that appears at the bottom of category-anime-manga."
+msgstr ""
+
+#: functions.php:81
+msgid "Additional sidebar that appears at the bottom of category-film-tv."
+msgstr ""
+
+#: functions.php:91
+msgid "Additional sidebar that appears at the bottom of category-musik."
+msgstr ""
+
+#: functions.php:101
+msgid "Additional sidebar that appears at the bottom of category-spel."
+msgstr ""
+
+#: functions.php:149
+msgid "Page %s"
+msgstr ""
+
+#: header.php:17
+msgid "Skip to content"
+msgstr ""
+
+#: inc/template-tags.php:30
+msgid "&larr; Prev"
+msgstr ""
+
+#: inc/template-tags.php:31
+msgid "Next &rarr;"
+msgstr ""
+
+#: inc/template-tags.php:36
+msgid "Posts navigation"
+msgstr ""
+
+#: inc/template-tags.php:61
+msgid "Post navigation"
+msgstr ""
+
+#: inc/template-tags.php:65
+msgid "<span class=\"meta-nav\">Published In</span>%title"
+msgstr ""
+
+#: inc/template-tags.php:67
+msgid "<span class=\"meta-nav\">Previous Post</span>%title"
+msgstr ""
+
+#: inc/template-tags.php:68
+msgid "<span class=\"meta-nav\">Next Post</span>%title"
+msgstr ""
+
+#: inc/template-tags.php:83
+msgid "Sticky"
+msgstr ""
+
+#: search.php:9
+msgid "Search Results for: %s"
+msgstr ""
